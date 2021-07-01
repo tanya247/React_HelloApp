@@ -2,6 +2,7 @@
 import './App.css';
 import React from 'react';
 import logo from './Assets/logo.png';
+import RegExpExec from 'es-abstract/2015/RegExpExec';
 
 //class App extends React.Component {
 // render(){
@@ -16,7 +17,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      username: ""
+      username: "",
+      nameError: ""
     }
   }
   onClick = ($event) => {
@@ -25,7 +27,13 @@ class App extends React.Component {
   }
   onNameChange = ($event) =>{
     console.log("Username is : ",$event.target.value)
+    const nameRegex = RegExp('^[A-Z]{1}[A-Za-z//s]{2,}$')
     this.setState({username:$event.target.value})
+    if(nameRegex.test($event.target.value)){
+      this.setState({nameError:""})
+    }else{
+      this.setState({nameError:"Name is Incorrect"})
+    }
   }
   render() {
     return (
@@ -37,6 +45,7 @@ class App extends React.Component {
 
       <div className = "text-box">
         <input onChange = {this.onNameChange}/>
+        <span className = "text-error">{this.state.nameError}</span> 
       </div>
       </>
     );

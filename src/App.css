@@ -11,3 +11,8 @@ img{
   display: flex;
   justify-content: center;
 }
+.text-error{
+  color: red;
+  font-size: 15px;
+  margin: 18px;
+}
