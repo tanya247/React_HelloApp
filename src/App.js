@@ -1,7 +1,7 @@
 
 import './App.css';
 import React from 'react';
-
+import logo from './Assets/logo.png';
 
 //class App extends React.Component {
 // render(){
@@ -22,6 +22,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>{this.state.title}</h1>
+        <img src = {logo}/>
       </div>
     );
   }
