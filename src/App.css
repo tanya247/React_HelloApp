@@ -7,3 +7,7 @@ img{
   margin: auto;
   cursor: pointer;
 }
+.text-box{
+  display: flex;
+  justify-content: center;
+}
